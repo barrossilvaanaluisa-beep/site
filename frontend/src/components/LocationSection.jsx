@@ -1,6 +1,6 @@
-import { MapPin, Instagram, Clock } from "lucide-react";
+import { MapPin, Instagram, Clock, Navigation, Car } from "lucide-react";
 import { Reveal, Eyebrow } from "./Reveal";
-import { ADDRESS, INSTAGRAM_URL, INSTAGRAM_HANDLE, WA_VISIT, HOURS } from "../lib/site";
+import { ADDRESS, INSTAGRAM_URL, INSTAGRAM_HANDLE, WA_VISIT, HOURS, GMAPS_ROUTE, WAZE_ROUTE } from "../lib/site";
 import { WhatsAppIcon } from "./Hero";
 
 const MAP_SRC =
@@ -48,6 +48,26 @@ const LocationSection = () => (
               <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-ivory/20 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ivory/75">
                 <Clock size={12} className="text-sun" /> {HOURS}
               </span>
+              <div className="mt-5 grid grid-cols-2 gap-3">
+                <a
+                  data-testid="route-google-maps"
+                  href={GMAPS_ROUTE}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-full bg-sun px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-forest transition-all duration-300 hover:scale-[1.03] hover:bg-ivory"
+                >
+                  <Navigation size={15} /> Rota no Maps
+                </a>
+                <a
+                  data-testid="route-waze"
+                  href={WAZE_ROUTE}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-full bg-ivory px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-forest transition-all duration-300 hover:scale-[1.03] hover:bg-flame hover:text-ivory"
+                >
+                  <Car size={15} /> Rota no Waze
+                </a>
+              </div>
             </div>
           </Reveal>
 

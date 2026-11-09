@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Reveal, Eyebrow, EASE } from "./Reveal";
-import { GALLERY } from "../lib/site";
+import { GALLERY, REAL_EVENTS } from "../lib/site";
 
 const Gallery = () => {
   const [selected, setSelected] = useState(null);
@@ -30,6 +30,50 @@ const Gallery = () => {
           </Reveal>
         </div>
 
+        <Reveal delay={0.25}>
+          <div className="mb-4 mt-2 flex items-center gap-3">
+            <span className="rounded-full bg-flame px-3.5 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-ivory">
+              Festa real
+            </span>
+            <h3 className="font-display text-xl font-bold text-ink sm:text-2xl">
+              Festas que já aconteceram aqui
+            </h3>
+          </div>
+        </Reveal>
+        <div className="mb-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
+          {REAL_EVENTS.map((g, i) => (
+            <motion.button
+              key={g.src}
+              data-testid={`real-event-${i}`}
+              initial={{ opacity: 0, y: 36 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.7, ease: EASE, delay: i * 0.07 }}
+              onClick={() => setSelected({ src: g.src, caption: g.caption })}
+              className="group relative block w-full overflow-hidden rounded-[1.5rem]"
+            >
+              <img
+                src={g.src}
+                alt={g.caption}
+                loading="lazy"
+                className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent" />
+              <span className="absolute left-3 top-3 rounded-full bg-flame px-2.5 py-1 font-mono text-[8px] font-bold uppercase tracking-[0.15em] text-ivory sm:text-[9px]">
+                {g.tag}
+              </span>
+              <span className="absolute bottom-3 left-3 right-3 text-left font-display text-sm font-bold text-ivory sm:text-base">
+                {g.caption}
+              </span>
+            </motion.button>
+          ))}
+        </div>
+
+        <Reveal>
+          <h3 className="mb-4 font-display text-xl font-bold text-ink sm:text-2xl">
+            O cenário que espera por você
+          </h3>
+        </Reveal>
         <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
           {GALLERY.map((g, i) => (
             <motion.button

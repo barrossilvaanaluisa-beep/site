@@ -1,6 +1,6 @@
 import { Reveal, Eyebrow } from "./Reveal";
 import Bird from "./Logo";
-import { IMAGES, WA_DECOR } from "../lib/site";
+import { REAL, WA_DECOR } from "../lib/site";
 import { WhatsAppIcon } from "./Hero";
 
 const STYLES = ["Aniversários", "Festas Infantis", "Casamentos ao ar livre", "Confraternizações"];
@@ -12,10 +12,18 @@ const DecorSection = () => (
       <Reveal className="relative">
         <div className="relative overflow-hidden rounded-t-[10rem] rounded-b-[2.5rem] shadow-2xl shadow-forest/20">
           <img
-            src={IMAGES.balloons}
-            alt="Decoração de festa com balões coloridos"
+            src={REAL.deco15}
+            alt="Decoração real de festa de 15 anos com balões"
             loading="lazy"
             className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
+          />
+        </div>
+        <div className="absolute -bottom-6 left-2 hidden -rotate-6 overflow-hidden rounded-2xl border-4 border-ivory shadow-xl sm:block lg:-left-8">
+          <img
+            src={REAL.chaBaby}
+            alt="Decoração real de chá de bebê"
+            loading="lazy"
+            className="h-36 w-36 object-cover lg:h-44 lg:w-44"
           />
         </div>
         <div className="absolute -bottom-5 -right-2 rotate-3 rounded-2xl bg-forest px-5 py-4 shadow-xl sm:right-8">

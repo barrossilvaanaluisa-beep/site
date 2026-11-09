@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ChefHat, PartyPopper, Leaf, ArrowUpRight } from "lucide-react";
 import { Reveal, Eyebrow, EASE } from "./Reveal";
-import { IMAGES, WA_DEFAULT } from "../lib/site";
+import { IMAGES, REAL, WA_DEFAULT } from "../lib/site";
 import { WhatsAppIcon } from "./Hero";
 
 const amenities = [
@@ -34,7 +34,7 @@ const amenities = [
     id: "area-arborizada",
     title: "Área Arborizada",
     desc: "Sombra natural, ar puro e brisa fresca o dia inteiro.",
-    img: IMAGES.trees,
+    img: REAL.mangueira,
     span: "lg:col-span-2",
     h: "h-64 lg:h-64",
   },

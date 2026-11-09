@@ -33,6 +33,15 @@ Criar um site profissional para o espaço de festas "Campo dos Pássaros" (Insta
 - Footer editorial + botão flutuante de WhatsApp com pulso
 - data-testids em todos os elementos interativos
 
+## Implementado (2026-11-09 — 2ª rodada, fotos reais)
+- Galeria "Festas que já aconteceram aqui" com 5 fotos reais enviadas pelo cliente e legendas (Chá de Bebê, Festa de 15 Anos, Jogo noturno no campo, Encontros com a natureza, A grande mangueira)
+- Fotos dos flyers recortadas sem exibir preços (preços ficam só no WhatsApp, conforme escolha do usuário)
+- Setas do print de vídeo removidas via crop
+- Seção Decoração agora usa a foto real do palco de balões (15 anos) + card colado do chá de bebê
+- Card "Área Arborizada" do bento usa a foto real da mangueira
+- Botões de rota em 1 toque: "Rota no Maps" (Google Maps directions) e "Rota no Waze" (waze.com/ul navigate) no card "Onde estamos"
+- Arquivos reais em /app/frontend/public/photos/ (mangueira, cha_baby, natureza_crop, deco_real, campo_noite)
+
 ## Verificação
 - Desktop 1440px e mobile 390px: sem overflow-x, imagens ok, lightbox ok
 - CTA de WhatsApp apontam para wa.me com texto pré-preenchido (clique abre conversa)
