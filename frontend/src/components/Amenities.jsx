@@ -1,88 +1,91 @@
 import { motion } from "framer-motion";
-import { ChefHat, PartyPopper, Leaf, ArrowUpRight } from "lucide-react";
+import {
+  ChefHat,
+  PartyPopper,
+  Leaf,
+  ArrowUpRight,
+  Waves,
+  Flame,
+  Trees,
+  Wind,
+} from "lucide-react";
+import { GiHorseHead } from "react-icons/gi";
 import { Reveal, Eyebrow, EASE } from "./Reveal";
-import { IMAGES, REAL, WA_DEFAULT } from "../lib/site";
+import { REAL, WA_DEFAULT } from "../lib/site";
 import { WhatsAppIcon } from "./Hero";
 
 const amenities = [
   {
     id: "campo-society",
     title: "Campo Society",
-    desc: "Gramado para jogar bola, reunir os amigos e animar a festa.",
-    img: IMAGES.soccer,
-    span: "lg:col-span-4 lg:row-span-2",
-    h: "h-72 lg:h-full",
+    desc: "O gramado iluminado para jogar bola e animar a festa até a noite.",
+    img: REAL.campoNoite,
   },
   {
     id: "piscina-infantil",
     title: "Piscina Infantil",
     desc: "Diversão segura para os pequenos no dia do evento.",
-    img: IMAGES.pool,
-    span: "lg:col-span-2",
-    h: "h-64 lg:h-72",
+    icon: Waves,
+    bg: "bg-sun text-forest",
+  },
+  {
+    id: "churrasqueira",
+    title: "Churrasqueira",
+    desc: "Estrutura completa para o churrasco que todo mundo ama.",
+    icon: Flame,
+    bg: "bg-coral text-ivory",
   },
   {
     id: "cozinha",
     title: "Cozinha",
     desc: "Espaço prático de apoio para buffet e preparo das delícias da festa.",
     icon: ChefHat,
-    bg: "bg-sun text-forest",
-    span: "lg:col-span-2",
-    h: "h-64 lg:h-72",
-  },
-  {
-    id: "area-arborizada",
-    title: "Área Arborizada",
-    desc: "Sombra natural, ar puro e brisa fresca o dia inteiro.",
-    img: REAL.mangueira,
-    span: "lg:col-span-2",
-    h: "h-64 lg:h-64",
-  },
-  {
-    id: "churrasqueira",
-    title: "Churrasqueira",
-    desc: "Estrutura completa para o churrasco que todo mundo ama.",
-    img: IMAGES.bbq,
-    span: "lg:col-span-2",
-    h: "h-64 lg:h-64",
+    bg: "bg-sand text-forest border border-forest/15",
   },
   {
     id: "cavalo",
     title: "Cavalos",
     desc: "Encanto rural que transforma qualquer festa em lembrança inesquecível.",
-    img: IMAGES.horse,
-    span: "lg:col-span-2",
-    h: "h-64 lg:h-64",
+    icon: GiHorseHead,
+    bg: "bg-forest text-ivory",
   },
   {
     id: "espaco-lazer",
     title: "Espaço de Lazer",
-    desc: "Áreas amplas para mesas, som e pista de dança a céu aberto.",
-    icon: PartyPopper,
-    bg: "bg-coral text-ivory",
-    span: "lg:col-span-2",
-    h: "h-64 lg:h-64",
+    desc: "Momentos ao ar livre que as crianças não esquecem nunca.",
+    img: REAL.natureza,
+  },
+  {
+    id: "area-arborizada",
+    title: "Área Arborizada",
+    desc: "Sombra natural, ar puro e brisa fresca o dia inteiro.",
+    icon: Trees,
+    bg: "bg-leaf text-ivory",
   },
   {
     id: "ambiente-tranquilo",
     title: "Ambiente Tranquilo",
     desc: "Privacidade e sossego, longe do corre-corre da cidade.",
-    icon: Leaf,
+    icon: Wind,
     bg: "bg-emerald text-ivory",
-    span: "lg:col-span-2",
-    h: "h-64 lg:h-64",
   },
   {
     id: "decoracao-cta",
     title: "Decoração à parte",
     desc: "Temos o serviço que deixa o espaço com a cara da sua festa.",
     icon: ArrowUpRight,
-    bg: "bg-forest text-ivory",
+    bg: "bg-ink text-ivory",
     link: "#decoracao",
-    span: "lg:col-span-2",
-    h: "h-64 lg:h-64",
   },
 ];
+
+const scrollToDecor = (e) => {
+  e.preventDefault();
+  const el = document.getElementById("decoracao");
+  if (!el) return;
+  if (window.__lenis) window.__lenis.scrollTo(el, { offset: -90 });
+  else el.scrollIntoView({ behavior: "smooth" });
+};
 
 const Amenities = () => (
   <section id="espaco" data-testid="amenities-section" className="relative bg-ivory py-20 sm:py-28">
@@ -133,8 +136,8 @@ const Amenities = () => (
             >
               <a.icon
                 size={34}
-                strokeWidth={1.6}
-                className="transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110"
+                strokeWidth={a.icon === GiHorseHead ? 1 : 1.6}
+                className="transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110"
               />
               <div>
                 <h3 className="font-display text-xl font-bold sm:text-2xl">{a.title}</h3>
@@ -144,12 +147,7 @@ const Amenities = () => (
                 <a
                   data-testid="amenity-decor-link"
                   href={a.link}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById("decoracao")?.scrollIntoView();
-                    if (window.__lenis)
-                      window.__lenis.scrollTo(document.getElementById("decoracao"), { offset: -90 });
-                  }}
+                  onClick={scrollToDecor}
                   className="absolute inset-0"
                   aria-label="Ver decoração"
                 />
@@ -165,7 +163,7 @@ const Amenities = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.7, ease: EASE, delay: (i % 3) * 0.08 }}
-              className={`${a.span} rounded-[1.75rem] shadow-sm transition-shadow duration-500 hover:shadow-xl hover:shadow-forest/15 ${a.h}`}
+              className="h-64 rounded-[1.75rem] shadow-sm transition-shadow duration-500 hover:shadow-xl hover:shadow-forest/15 lg:col-span-2"
             >
               {inner}
             </motion.div>

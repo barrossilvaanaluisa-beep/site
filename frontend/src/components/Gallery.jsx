@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Reveal, Eyebrow, EASE } from "./Reveal";
-import { GALLERY, REAL_EVENTS } from "../lib/site";
+import { REAL_EVENTS } from "../lib/site";
 
 const Gallery = () => {
   const [selected, setSelected] = useState(null);
@@ -24,14 +24,14 @@ const Gallery = () => {
           </div>
           <Reveal delay={0.2}>
             <p className="max-w-sm text-base leading-relaxed text-slate-600">
-              Luzes, natureza e muita festa. Toque nas fotos para ver de perto
-              o que espera pelo seu convidados.
+              Fotos de verdade, das festas e dos momentos que já aconteceram
+              aqui. Toque para ver de perto.
             </p>
           </Reveal>
         </div>
 
         <Reveal delay={0.25}>
-          <div className="mb-4 mt-2 flex items-center gap-3">
+          <div className="mb-4 flex items-center gap-3">
             <span className="rounded-full bg-flame px-3.5 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-ivory">
               Festa real
             </span>
@@ -40,7 +40,7 @@ const Gallery = () => {
             </h3>
           </div>
         </Reveal>
-        <div className="mb-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
           {REAL_EVENTS.map((g, i) => (
             <motion.button
               key={g.src}
@@ -63,39 +63,6 @@ const Gallery = () => {
                 {g.tag}
               </span>
               <span className="absolute bottom-3 left-3 right-3 text-left font-display text-sm font-bold text-ivory sm:text-base">
-                {g.caption}
-              </span>
-            </motion.button>
-          ))}
-        </div>
-
-        <Reveal>
-          <h3 className="mb-4 font-display text-xl font-bold text-ink sm:text-2xl">
-            O cenário que espera por você
-          </h3>
-        </Reveal>
-        <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
-          {GALLERY.map((g, i) => (
-            <motion.button
-              key={g.src}
-              data-testid={`gallery-item-${i}`}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.7, ease: EASE, delay: (i % 3) * 0.08 }}
-              onClick={() => setSelected(g)}
-              className="group relative block w-full overflow-hidden rounded-[1.75rem]"
-            >
-              <img
-                src={g.src}
-                alt={g.caption}
-                loading="lazy"
-                className={`w-full object-cover transition-all duration-700 ease-out group-hover:scale-105 ${
-                  g.tall ? "aspect-[3/4]" : "aspect-[4/3]"
-                }`}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
-              <span className="absolute bottom-4 left-4 rounded-full bg-ivory/90 px-4 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-forest backdrop-blur-sm">
                 {g.caption}
               </span>
             </motion.button>

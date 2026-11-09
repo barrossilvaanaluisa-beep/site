@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Clock, Sparkles } from "lucide-react";
 import { MaskedLine, EASE } from "./Reveal";
 import Bird from "./Logo";
-import { IMAGES, WA_DEFAULT, HOURS } from "../lib/site";
+import { REAL, WA_DEFAULT, HOURS } from "../lib/site";
 import { scrollToId } from "./Navbar";
 
 const WhatsAppIcon = ({ size = 18 }) => (
@@ -28,20 +28,17 @@ const Hero = () => {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
+  const glowY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const cardY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
 
   return (
     <section ref={ref} data-testid="hero" className="relative min-h-[100svh] overflow-hidden bg-ink">
-      <motion.div style={{ y, scale }} className="absolute inset-0">
-        <img
-          src={IMAGES.hero}
-          alt="Festa ao ar livre sob luzes em meio às árvores"
-          className="h-full w-full object-cover"
-        />
-      </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/45 to-ink" />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/60 via-transparent to-transparent" />
+      <motion.div
+        style={{ y: glowY }}
+        className="pointer-events-none absolute -left-40 -top-40 h-[620px] w-[620px] rounded-full bg-sun/15 blur-[130px]"
+      />
+      <div className="pointer-events-none absolute -bottom-32 right-0 h-[480px] w-[480px] rounded-full bg-leaf/25 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(250,247,239,0.06),transparent_55%)]" />
 
       {/* bunting pennants */}
       <motion.svg
@@ -64,35 +61,40 @@ const Hero = () => {
         ))}
       </motion.svg>
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-14 pt-32 sm:px-8 sm:pb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: EASE, delay: 0.35 }}
-          className="mb-6 flex"
-        >
-          <span className="inline-flex items-center gap-2 rounded-full border border-ivory/25 bg-ivory/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ivory backdrop-blur-md sm:text-[11px]">
-            <Clock size={13} className="text-sun" /> {HOURS}
-          </span>
-        </motion.div>
+      <Bird
+        className="absolute right-[8%] top-[22%] hidden h-12 w-24 opacity-30 lg:block"
+        stroke="#EAB308"
+      />
 
-        <h1 className="font-display text-[13.5vw] font-extrabold leading-[0.95] tracking-tight text-ivory sm:text-7xl lg:text-8xl">
-          <MaskedLine delay={0.45}>Onde as festas</MaskedLine>
-          <MaskedLine delay={0.58}>
-            ganham{" "}
-            <em className="not-italic text-sun">
-              asas
-              <Bird className="ml-3 inline-block h-[0.62em] w-auto align-baseline" stroke="#F97316" />
-            </em>
-          </MaskedLine>
-        </h1>
+      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-7xl items-center gap-12 px-5 pb-14 pt-32 sm:px-8 lg:grid-cols-[1.15fr_1fr] lg:pb-20">
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: EASE, delay: 0.35 }}
+            className="mb-6 flex"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full border border-ivory/25 bg-ivory/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ivory backdrop-blur-md sm:text-[11px]">
+              <Clock size={13} className="text-sun" /> {HOURS}
+            </span>
+          </motion.div>
 
-        <div className="mt-7 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <h1 className="font-display text-[13.5vw] font-extrabold leading-[0.95] tracking-tight text-ivory sm:text-7xl lg:text-[5.2rem]">
+            <MaskedLine delay={0.45}>Onde as festas</MaskedLine>
+            <MaskedLine delay={0.58}>
+              ganham{" "}
+              <em className="not-italic text-sun">
+                asas
+                <Bird className="ml-3 inline-block h-[0.62em] w-auto align-baseline" stroke="#F97316" />
+              </em>
+            </MaskedLine>
+          </h1>
+
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.85 }}
-            className="max-w-xl text-base leading-relaxed text-ivory/85 sm:text-lg"
+            className="mt-7 max-w-xl text-base leading-relaxed text-ivory/85 sm:text-lg"
           >
             Campo society, piscina, churrasqueira, cavalos e muita área
             arborizada na saída para Senador Canedo. O cenário completo para
@@ -103,14 +105,14 @@ const Hero = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 1 }}
-            className="flex flex-wrap items-center gap-3"
+            className="mt-8 flex flex-wrap items-center gap-3"
           >
             <a
               data-testid="whatsapp-hero-button"
               href={WA_DEFAULT}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 rounded-full bg-sun px-7 py-4 text-sm font-bold uppercase tracking-wider text-forest transition-all duration-300 hover:scale-[1.03] hover:bg-flame hover:text-ivory"
+              className="flex items-center gap-3 rounded-full bg-sun px-7 py-4 text-sm font-bold uppercase tracking-wider text-forest transition-all duration-300 hover:scale-[1.03] hover:bg-flame hover:text-ivory"
             >
               <WhatsAppIcon size={19} />
               Pedir orçamento
@@ -123,22 +125,77 @@ const Hero = () => {
               <Sparkles size={17} /> Conhecer o espaço
             </button>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.3 }}
+            className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-ivory/15 pt-5"
+          >
+            {CHIPS.map((c) => (
+              <span
+                key={c}
+                className="font-mono text-[10px] uppercase tracking-[0.3em] text-ivory/55 sm:text-[11px]"
+              >
+                {c}
+              </span>
+            ))}
+          </motion.div>
+
+          {/* real photo strip — mobile */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: EASE, delay: 1.4 }}
+            className="mt-7 flex gap-3 lg:hidden"
+          >
+            <div className="relative flex-1 overflow-hidden rounded-2xl">
+              <img src={REAL.mangueira} alt="A grande mangueira do espaço" className="h-24 w-full object-cover" />
+              <span className="absolute bottom-2 left-2 rounded-full bg-ink/70 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[0.15em] text-ivory backdrop-blur-sm">
+                o espaço real
+              </span>
+            </div>
+            <div className="relative flex-1 overflow-hidden rounded-2xl">
+              <img src={REAL.campoNoite} alt="Campo society à noite" className="h-24 w-full object-cover" />
+              <span className="absolute bottom-2 left-2 rounded-full bg-ink/70 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[0.15em] text-ivory backdrop-blur-sm">
+                campo society
+              </span>
+            </div>
+          </motion.div>
         </div>
 
+        {/* real photo collage — desktop */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.3 }}
-          className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-ivory/15 pt-5"
+          style={{ y: cardY }}
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.1, ease: EASE, delay: 0.9 }}
+          className="relative hidden lg:block"
         >
-          {CHIPS.map((c) => (
-            <span
-              key={c}
-              className="font-mono text-[10px] uppercase tracking-[0.3em] text-ivory/55 sm:text-[11px]"
-            >
-              {c}
+          <div className="relative ml-auto w-[78%] rotate-2 overflow-hidden rounded-t-[9rem] rounded-b-[2.5rem] border border-ivory/15 shadow-2xl shadow-black/40">
+            <img
+              src={REAL.mangueira}
+              alt="A grande mangueira e as mesas do espaço"
+              className="aspect-[4/5] w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 rounded-full bg-ivory/90 px-4 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-forest">
+              o espaço real — área arborizada
             </span>
-          ))}
+          </div>
+          <div className="absolute -bottom-10 -left-6 w-52 -rotate-6 overflow-hidden rounded-2xl border-4 border-ivory shadow-2xl">
+            <img src={REAL.campoNoite} alt="Campo society iluminado à noite" className="aspect-[4/3] w-full object-cover" />
+            <span className="absolute bottom-2.5 left-2.5 rounded-full bg-ink/70 px-3 py-1 font-mono text-[8px] uppercase tracking-[0.15em] text-ivory backdrop-blur-sm">
+              campo society à noite
+            </span>
+          </div>
+          <div className="absolute -right-4 top-8 flex h-16 w-16 items-center justify-center rounded-full bg-sun shadow-xl">
+            <span className="text-center font-display text-[10px] font-extrabold uppercase leading-tight text-forest">
+              6h às
+              <br />
+              22h
+            </span>
+          </div>
         </motion.div>
       </div>
     </section>

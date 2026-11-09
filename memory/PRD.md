@@ -33,6 +33,14 @@ Criar um site profissional para o espaço de festas "Campo dos Pássaros" (Insta
 - Footer editorial + botão flutuante de WhatsApp com pulso
 - data-testids em todos os elementos interativos
 
+## Implementado (2026-11-09 — 3ª rodada, só fotos reais)
+- Removidas TODAS as imagens de banco (Unsplash) do site — verificado: 0 imagens externas
+- Hero redesenhado: fundo gráfico festivo (brilhos, flâmulas) + colagem apenas com fotos reais (mangueira + campo society à noite) e selo 6h-22h; no mobile, faixa de fotos reais abaixo dos CTAs
+- Bento das comodidades: cards com fotos reais (Campo Society à noite, Espaço de Lazer) + cards de ícone (Piscina, Churrasqueira, Cozinha, Cavalos com ícone de cavalo do react-icons/gi, Área Arborizada, Ambiente Tranquilo, Decoração)
+- Galeria exibe exclusivamente as 5 fotos reais com legendas + lightbox
+- WhatsApp corrigido conforme instrução do usuário: +55 62 3224-2604 (wa.me/556232242604) — OBS: o flyer enviado mostrava "(62) 3324-2604"; usado o número do último pedido do usuário
+- react-icons adicionado para ícone de cavalo (GiHorseHead)
+
 ## Implementado (2026-11-09 — 2ª rodada, fotos reais)
 - Galeria "Festas que já aconteceram aqui" com 5 fotos reais enviadas pelo cliente e legendas (Chá de Bebê, Festa de 15 Anos, Jogo noturno no campo, Encontros com a natureza, A grande mangueira)
 - Fotos dos flyers recortadas sem exibir preços (preços ficam só no WhatsApp, conforme escolha do usuário)
