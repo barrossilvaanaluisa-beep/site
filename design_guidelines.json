@@ -1,0 +1,207 @@
+{
+  "project_name": "Campo dos Pássaros",
+  "project_type": "Event Venue Landing Page (Single-Page Website)",
+  "language": "pt-BR",
+  "brand_identity": {
+    "name": "Campo dos Pássaros",
+    "tagline": "O lugar perfeito para criar memórias inesquecíveis em Goiânia",
+    "concept": "Natureza exuberante, festas vibirantes e momentos especiais. Um refúgio arborizado na saída para Senador Canedo.",
+    "instagram": "https://www.instagram.com/campodospassaros/",
+    "instagram_handle": "@campodospassaros",
+    "whatsapp_raw": "5562322242604",
+    "whatsapp_formatted": "+55 62 32224-2604",
+    "whatsapp_link": "https://wa.me/5562322242604?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20uma%20visita%20ao%20Campo%20dos%20P%C3%A1ssaros.",
+    "location": "Avenida das Pirâmides, Bairro Novo Mundo (Saída para Senador Canedo), Goiânia - GO",
+    "visit_hours": "6h às 22h (Visitas e agendamentos)",
+    "pricing_policy": "Valores sob consulta via WhatsApp (Não exibir preços fixos no site). Serviços de Decoração disponíveis (valor à parte)."
+  },
+  "art_direction": {
+    "style": "Festivo, colorido, caloroso e sofisticado com toque tropical e moderno (Awwwards-level)",
+    "theme": "Light theme predominant com contrastes vibrantes em tons de verde esmeralda, amarelo dourado festivo, terracotta queimado e branco marfim",
+    "visual_archetype": "Archetype 1 (Organic & Earthy) fundido com Archetype 6 (Vibrant Play & Celebration)",
+    "key_design_elements": [
+      "Logo SVG exclusivo combinando a silhueta de dois pássaros em voo com flâmulas festivas",
+      "Hero kinetic com revelação linha a linha mascarada (Framer Motion masking reveal)",
+      "Efeito parallax suave com Lenis smooth scroll",
+      "Grid Bento assimétrico e dinâmico para destacar as 8 comodidades principais",
+      "Marquee editorial lento com tipografia elegante e divisores orgânicos",
+      "Imagens com molduras recortadas (clipped frames), cantos orgânicos assimétricos e luz spotlight",
+      "Botão WhatsApp flutuante e proeminente com pulso festivo e atalho direto"
+    ]
+  },
+  "color_palette": {
+    "primary": {
+      "forest_green": "#1B4D3E",
+      "emerald_green": "#0D5C3A",
+      "leaf_green": "#2E7D32"
+    },
+    "festive_accents": {
+      "sunburst_yellow": "#EAB308",
+      "warm_amber": "#F59E0B",
+      "terracotta": "#D97706",
+      "tropical_coral": "#F97316"
+    },
+    "neutrals": {
+      "ivory_bg": "#FAFAF7",
+      "warm_sand": "#F3F0E6",
+      "deep_charcoal": "#1A1D1A",
+      "muted_slate": "#4A5568",
+      "card_white": "#FFFFFF"
+    },
+    "gradients": {
+      "festive_glow": "bg-gradient-to-r from-amber-500 via-emerald-600 to-green-700",
+      "subtle_card": "bg-gradient-to-br from-white via-emerald-50/30 to-amber-50/20"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "headings": "Outfit, sans-serif (Display festivo e moderno)",
+      "subheadings": "Cabinet Grotesk / Outfit, sans-serif",
+      "body": "Plus Jakarta Sans / Inter, sans-serif",
+      "accent_mono": "JetBrains Mono / Space Mono (para horários e coordenadas)"
+    },
+    "hierarchy": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+      "h3_card": "text-xl sm:text-2xl font-semibold",
+      "body_text": "text-base sm:text-lg leading-relaxed text-slate-700",
+      "caption": "text-xs sm:text-sm uppercase tracking-[0.2em] font-medium"
+    }
+  },
+  "layout_sections": [
+    {
+      "id": "header",
+      "name": "Navegação Flutuante Crystal Glass",
+      "features": [
+        "Logo SVG 'Campo dos Pássaros'",
+        "Links rápidos: Espaço, Comodidades, Decoração, Galeria, Localização",
+        "CTA destacado: 'Agendar Visita (WhatsApp)' com ícone interativo",
+        "Indicador de funcionamento 'Aberto para visitas: 6h - 22h'"
+      ]
+    },
+    {
+      "id": "hero",
+      "name": "Kinetic Hero com Masked Line Reveal & Parallax",
+      "features": [
+        "Badge com brilho: 'O Seu Evento dos Sonhos em Goiânia'",
+        "Título kinetic revelado linha a linha com animação suave",
+        "Subtítulo envolvente destacando festas e momentos memoráveis",
+        "Botões duplos de CTA: 'Solicitar Orçamento no WhatsApp' e 'Conhecer o Espaço'",
+        "Card de destaques rápidos em sobreposição com contadores (m², eventos realizados, nota)"
+      ]
+    },
+    {
+      "id": "marquee",
+      "name": "Marquee Editorial Festivo",
+      "features": [
+        "Faixa de rolagem contínua suave com palavras-chave: CAMPO SOCIETY • PISCINA INFANTIL • ÁREA ARBORIZADA • CHURRASQUEIRA • CAVALOS • DECORAÇÃO ESPECIAL • FESTAS E EVENTOS"
+      ]
+    },
+    {
+      "id": "amenities_bento",
+      "name": "Bento Grid de Comodidades e Estrutura",
+      "features": [
+        "Campo Society (Gramado premium para jogos e lazer)",
+        "Piscina Infantil (Diversão segura para as crianças)",
+        "Área Arborizada & Ambiente Tranquilo (Sombra natural e brisa refrescante)",
+        "Churrasqueira Completa (Estrutura para o melhor churrasco)",
+        "Passeio a Cavalo (Contato com a natureza e experiência rural)",
+        "Cozinha Equipada (Espaço prático para buffet e apoio)",
+        "Espaço de LazerAmplo (Área coberta e aberta para mesas e pista de dança)",
+        "Decoração Personalizada (Serviço à parte para transformar o ambiente)"
+      ]
+    },
+    {
+      "id": "decoration_showcase",
+      "name": "Sessão Especial de Decoração",
+      "features": [
+        "Destaque visual do serviço de decoração à parte",
+        "Galeria de estilos: Aniversários, Casamentos ao Ar Livre, Confraternizações e Festas Infantis",
+        "Banner informativo com call-to-action para personalizar com a equipe"
+      ]
+    },
+    {
+      "id": "experience_gallery",
+      "name": "Galeria do Espaço & Eventos Realizados",
+      "features": [
+        "Grid dinâmico de fotos tratadas com spotlight e cantos orgânicos",
+        "Filtros interativos por categoria de evento (Todos, Festas, Natureza, Lazer)",
+        "Modal lightbox para visualização em alta definição"
+      ]
+    },
+    {
+      "id": "scheduling_info",
+      "name": "Horários e Regras de Visitação",
+      "features": [
+        "Card informativo com horário de atendimento: 06:00 às 22:00",
+        "Como agendar sua visita guiada via WhatsApp",
+        "Dicas de planejamento para o dia do seu evento"
+      ]
+    },
+    {
+      "id": "location_contact",
+      "name": "Localização e Contato Direto",
+      "features": [
+        "Mapa interativo decorativo com coordenadas para Novo Mundo / Saída para Senador Canedo",
+        "Endereço exato: Avenida das Pirâmides, Novo Mundo",
+        "Link direto para o Instagram @campodospassaros",
+        "Formulário de mensagem rápida simulado integrado ao acionamento do WhatsApp"
+      ]
+    },
+    {
+      "id": "footer",
+      "name": "Footer Editorial com Assinatura da Marca",
+      "features": [
+        "Logo em grande escala em marca d'água",
+        "Links de navegação rápida e termos de agendamento",
+        "Direitos reservados e selo de excelência em atendimento"
+      ]
+    }
+  ],
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1718096551429-8cafaba752db?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHw0fHxwYXJ0eSUyMHZlbnVlJTIwZGVjb3JhdGlvbiUyMG91dGRvb3IlMjBldmVudCUyMGxpZ2h0cyUyMGJicSUyMHBvb2x8ZW58MHx8fHwxNzk0MjM4MTk4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Área externa de festas com iluminação aconchegante e gramado verde",
+      "category": "Hero Background"
+    },
+    "swimming_pool": {
+      "url": "https://images.unsplash.com/photo-1775478944424-b04df3f01556?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHw0fHxzd2ltbWluZyUyMHBvb2wlMjByZXNvcnQlMjBwYXJ0eSUyMHN1bmxpZ2h0JTIwb3V0ZG9vcnxlbnwwfHx8fDE3OTQyMzgyMDN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Piscina e área de lazer sob o sol",
+      "category": "Amenities - Piscina Infantil & Lazer"
+    },
+    "soccer_field": {
+      "url": "https://images.unsplash.com/photo-1721886537583-ea3a257adb9e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwxfHxzb2NjZXIlMjBmaWVsZCUyMGhvcnNlJTIwbmF0dXJlJTIwb3V0ZG9vciUyMHJlY3JlYXRpb24lMjBmYW1pbHklMjBwYXJ0eXxlbnwwfHx8fDE3OTQyMzgxOTl8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Campo Society com trave de futebol cercado por árvores",
+      "category": "Amenities - Campo Society"
+    },
+    "horse": {
+      "url": "https://images.unsplash.com/photo-1788954774727-ed0c958c3ff1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwxfHxob3JzZSUyMGZpZWxkJTIwZ3JlZW4lMjBuYXR1cmUlMjBmYXJtfGVufDB8fHx8MTc5NDIzODIwM3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Cavalos pastando pacificamente no campo verde",
+      "category": "Amenities - Cavalo & Natureza"
+    },
+    "bbq": {
+      "url": "https://images.unsplash.com/photo-1782595533232-cb9242d9670f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxiYXJiZWN1ZSUyMGdyaWxsJTIwbWVhdCUyMG91dGRvb3IlMjBwYXJ0eSUyMGZlc3RpdmV8ZW58MHx8fHwxNzk0MjM4MjAzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Churrasqueira e carnes grelhando ao ar livre",
+      "category": "Amenities - Churrasqueira"
+    },
+    "party_decoration": {
+      "url": "https://images.unsplash.com/photo-1779816077360-015f74db32ff?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwZXZlbnQlMjB2ZW51ZSUyMHN3aW1taW5nJTIwcG9vbCUyMHBhcnR5JTIwZ3JlZW4lMjBuYXR1cmUlMjBicmFzaWx8ZW58MHx8fHwxNzk0MjM4MTk4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Evento decorado ao ar livre em ambiente arborizado",
+      "category": "Decoração & Festas"
+    },
+    "nature_trees": {
+      "url": "https://images.unsplash.com/photo-1632159775641-97369ee2177b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwyfHxvdXRkb29yJTIwZXZlbnQlMjB2ZW51ZSUyMHN3aW1taW5nJTIwcG9vbCUyMHBhcnR5JTIwZ3JlZW4lMjBuYXR1cmUlMjBicmFzaWx8ZW58MHx8fHwxNzk0MjM4MTk4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Área verde arborizada e ambiente tranquilo com ponte de madeira",
+      "category": "Área Arborizada"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Ensure all interactive elements have data-testid attributes (e.g., data-testid='whatsapp-hero-button', data-testid='schedule-visit-cta').",
+    "Implement Lenis smooth scrolling for luxury momentum scrolling.",
+    "Use Framer Motion for scroll reveals, staggered entry on the Bento grid, and interactive hover transformations.",
+    "Do NOT show fixed prices anywhere. All budget CTAs must redirect to WhatsApp with custom pre-filled Portuguese text.",
+    "Maintain high color contrast for all text (WCAG AA compliant).",
+    "Integrate the exact details: WhatsApp 55 62 322242604, Instagram @campodospassaros, Visitas das 6h às 22h, Novo Mundo - saída para Senador Canedo.",
+    "All components are built in JS (.js / .jsx) files in src/."
+  ]
+}
